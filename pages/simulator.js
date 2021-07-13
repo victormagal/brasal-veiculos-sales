@@ -9,31 +9,27 @@ import PeriodInput from '../components/PeriodInput';
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-export default function Home() {
-  const [total, setTotal] = useState('');
-  const [entry, setEntry] = useState('');
-  const [fee, setFee] = useState('');
-  const [period, setPeriod] = useState('');
+export default function Simulator() {
+  const [name, setName] = useState('');
+  const [mail, setMail] = useState('');
+  const [phone, setPhone] = useState('');
 
 
   const formik = useFormik({
     initialValues: {
-      valor: '',
-      entrada: '',
-      taxa: '',
-      periodo: ''
+      name: '',
+      mail: '',
+      phone: ''
     },
     validationSchema: Yup.object({
-      valor: Yup.string().required('Campo obrigatório'),
-      entrada: Yup.string().required('Campo obrigatório'),
-      taxa: Yup.string().required('Campo obrigatório'),
-      periodo: Yup.string().required('Campo obrigatório'),
+      name: Yup.string().required('Campo obrigatório'),
+      mail: Yup.string().required('Campo obrigatório'),
+      phone: Yup.string().required('Campo obrigatório'),
     }),
     onSubmit: values => {
-      setTotal(values.valor);
-      setEntry(values.entrada);
-      setFee(values.taxa);
-      setPeriod(values.periodo);
+      setTotal(values.name);
+      setEntry(values.mail);
+      setFee(values.phone);
       // console.log(total, entry, fee, period);
     }
   });
@@ -47,67 +43,51 @@ export default function Home() {
             <fieldset>
               <ul>
                 <li className="flex flex-col">
-                  <Label target="valor" content="Valor" />
+                  <Label target="name" content="Meu nome é" />
                   <CurrencyInput 
                     type='text' 
                     guide={false}
                     placeholder='Ex: R$ 10.000,00'
-                    id='valor'
-                    name='valor'
+                    id='name'
+                    name='name'
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    value={formik.values.valor} 
+                    value={formik.values.name} 
                   />
-                  {formik.touched.valor && formik.errors.valor ? (
-                    <ErrorMessage content={formik.errors.valor} />
+                  {formik.touched.name && formik.errors.name ? (
+                    <ErrorMessage content={formik.errors.name} />
                   ) : null}
                 </li>
                 <li className="flex flex-col mt-2">
-                  <Label target="entrada" content="Valor de entrada" />
+                  <Label target="mail" content="E o meu e-mail é" />
                   <CurrencyInput 
                     type='text' 
                     guide={false}
                     placeholder='Ex: R$ 10.000,00'
-                    id='entrada'
-                    name='entrada'
+                    id='mail'
+                    name='mail'
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    value={formik.values.entrada} 
+                    value={formik.values.mail} 
                   />
-                  {formik.touched.entrada && formik.errors.entrada ? (
-                    <ErrorMessage content={formik.errors.entrada} />
+                  {formik.touched.mail && formik.errors.mail ? (
+                    <ErrorMessage content={formik.errors.mail} />
                   ) : null}
                 </li>
                 <li className="flex flex-col mt-2">
-                  <Label target="taxa" content="Taxa de juros" />
+                  <Label target="phone" content="Se precisar, meu telefone é" />
                   <FeeInput 
                     type='text'
                     guide={false}
                     placeholder='Ex: 1,99%'
-                    id='taxa'
-                    name='taxa'
+                    id='phone'
+                    name='phone'
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    value={formik.values.taxa}
+                    value={formik.values.phone}
                   />
-                  {formik.touched.taxa && formik.errors.taxa ? (
-                    <ErrorMessage content={formik.errors.taxa} />
-                  ) : null}
-                </li>
-                <li className="flex flex-col mt-2">
-                  <Label target="periodo" content="Período" />
-                  <PeriodInput 
-                    type='text'
-                    guide={false}
-                    placeholder='12'
-                    id='periodo'
-                    name='periodo'
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.periodo}
-                  />
-                  {formik.touched.periodo && formik.errors.periodo ? (
-                    <ErrorMessage content={formik.errors.periodo} />
+                  {formik.touched.phone && formik.errors.phone ? (
+                    <ErrorMessage content={formik.errors.phone} />
                   ) : null}
                 </li>
               </ul>
