@@ -1,7 +1,7 @@
-export default function Option({ content }) {
+export default function Option({ value, label }) {
   return (
-    <option value={content}>
-      {content}
+    <option value={value}>
+      {label}
     </option>
   );
 }

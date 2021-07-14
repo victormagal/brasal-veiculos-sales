@@ -2,7 +2,6 @@ import Button from '../components/Button';
 import CepInput from '../components/CepInput';
 import CpfInput from '../components/CpfInput';
 import DateInput from '../components/DateInput';
-import Dropdown from '../components/Dropdown';
 import ErrorMessage from '../components/ErrorMessage';
 import Header from "../components/Header";
 import Label from '../components/Label';
@@ -10,7 +9,9 @@ import Option from '../components/Option';
 import PhoneInput from '../components/PhoneInput';
 import Schema from '../helpers/schema';
 import TextInput from '../components/TextInput';
-import { Form, Formik } from "formik";
+import { Field, Form, Formik } from "formik";
+
+import { armoredes, brands, genders, incomes, models, states, usages } from '../helpers/selectContent';
 
 export default function Simulator() {
   const onSubmit = (values, actions) => {
@@ -35,23 +36,30 @@ export default function Simulator() {
       <Header />
       <Formik
         initialValues={{
-          name: '',
-          mail: '',
-          phone: '',
+          armored: '',
+          birth: '',
+          brand: '',
           cep: '',
-          cpf: '',
-          place: '',
-          number: '',
-          complement: '',
-          district: '',
           city: '',
-          state: '',
+          complement: '',
+          cpf: '',
+          district: '',
+          gender: '',
+          income: '',
+          mail: '',
+          model: '',
+          name: '',
+          number: '',
+          phone: '',
+          place: '',
           secured: '',
-          birth: ''
+          state: '',
+          usage: '',
         }}
         onSubmit={onSubmit}
         validationSchema={Schema}
-        render={({ errors, handleChange, setFieldValue, values }) => (
+      >
+        {({ errors, handleChange, setFieldValue, values }) => (
           <Form className='lg:container mx-auto grid grid-cols-12 gap-4'>
             <div className="col-span-3">
               <fieldset>
@@ -103,40 +111,150 @@ export default function Simulator() {
                 <ul>
                   <li className='flex flex-col'>
                     <Label target='brand' content='A marca do seu veículo é' />
-                    <Dropdown id='brand'>
-                      <Option content='Selecione...' />
-                      <Option content='Chevrolet' />
-                      <Option content='FIAT' />
-                    </Dropdown>
+                    <Field 
+                      as='select' 
+                      id='brand' 
+                      name='brand'
+                      className='border border-gray-200 font-light mt-1 p-2 rounded-md text-sm w-full customSelect'
+                    >
+                      <Option value={null} label='Selecione...' />
+                      {brands.map((brand, index) => (
+                        <Option key={index} value={brand.id} label={brand.label} />
+                      ))}
+                    </Field>
+                    {errors.brand && (
+                      <ErrorMessage content={errors.brand} />
+                    )}
                   </li>
                   <li className='flex flex-col mt-2'>
                     <Label target='model' content='O modelo do seu veículo é' />
-                    <Dropdown id='model'>
-                      <Option content='Selecione...' />
-                      <Option content='Gol' />
-                      <Option content='Palio' />
-                      <Option content='Versa' />
-                    </Dropdown>
+                    <Field
+                      as='select'
+                      id='model'
+                      name='model'
+                      className='border border-gray-200 font-light mt-1 p-2 rounded-md text-sm w-full customSelect'
+                    >
+                      <Option value={null} label='Selecione...' />
+                      {models.map((model, index) => (
+                        <Option key={index} value={model.id} label={model.label} />
+                      ))}
+                    </Field>
+                    {errors.model && (
+                      <ErrorMessage content={errors.model} />
+                    )}
                   </li>
                   <li className='flex flex-col mt-2'>
                     <Label target='usage' content='Qual é o tipo de uso do carro?' />
-                    <Dropdown id='usage'>
-                      <Option content='Selecione...' />
-                      <Option content='Particular' />
-                      <Option content='Particular, uso comercial e motorista de aplicativo' />
-                      <Option content='Representante comercial/vendas' />
-                      <Option content='Taxi' />
-                      <Option content='Transporte de carga' />
-                      <Option content='Transporte de passageiros' />
-                    </Dropdown>
+                    <Field
+                      as='select'
+                      id='usage'
+                      name='usage'
+                      className='border border-gray-200 font-light mt-1 p-2 rounded-md text-sm w-full customSelect'
+                    >
+                      <Option value={null} label='Selecione...' />
+                      {usages.map((usage, index) => (
+                        <Option key={index} value={usage.id} label={usage.label} />
+                      ))}
+                    </Field>
+                    {errors.usage && (
+                      <ErrorMessage content={errors.usage} />
+                    )}
                   </li>
                   <li className='flex flex-col mt-2'>
                     <Label target='armored' content='Seu carro é blindado?' />
-                    <Dropdown id='armored'>
-                      <Option content='Selecione...' />
-                      <Option content='Sim' />
-                      <Option content='Não' />
-                    </Dropdown>
+                    <Field
+                      as='select'
+                      id='armored'
+                      name='armored'
+                      className='border border-gray-200 font-light mt-1 p-2 rounded-md text-sm w-full customSelect'
+                    >
+                      <Option value={null} label='Selecione...' />
+                      {armoredes.map((armored, index) => (
+                        <Option key={index} value={armored.id} label={armored.label} />
+                      ))}
+                    </Field>
+                    {errors.armored && (
+                      <ErrorMessage content={errors.armored} />
+                    )}
+                  </li>
+                </ul>
+              </fieldset>
+            </div>
+            <div className="col-span-3">
+              <fieldset>
+                <ul>
+                  <li className='flex flex-col'>
+                    <Label target='cpf' content='O CPF do segurado é' />
+                    <CpfInput 
+                      placeholder='Ex: 999.999.999-99'
+                      id='cpf'
+                      name='cpf'
+                      onChange={handleChange}
+                      value={values.cpf}
+                    />
+                    {errors.cpf && (
+                      <ErrorMessage content={errors.cpf} />
+                    )}
+                  </li>
+                  <li className='flex flex-col mt-2'>
+                    <Label target='secured' content='O nome do segurado é' />
+                    <TextInput 
+                      placeholder='Nome do segurado'
+                      id='secured'
+                      name='secured'
+                      onChange={handleChange}
+                      value={values.secured}
+                    />
+                    {errors.secured && (
+                      <ErrorMessage content={errors.secured} />
+                    )}
+                  </li>
+                  <li className='flex flex-col mt-2'>
+                    <Label target='birth' content='Nascido(a) no dia' />
+                    <DateInput 
+                      placeholder='DD/MM/AAAA'
+                      id='birth'
+                      name='birth'
+                      onChange={handleChange}
+                      value={values.birth}
+                    />
+                    {errors.birth && (
+                      <ErrorMessage content={errors.birth} />
+                    )}
+                  </li>
+                  <li className='flex flex-col mt-2'>
+                    <Label target='income' content='Com renda familiar mensal de' />
+                    <Field
+                      as='select'
+                      id='income'
+                      name='income'
+                      className='border border-gray-200 font-light mt-1 p-2 rounded-md text-sm w-full customSelect'
+                    >
+                      <Option value={null} label='Selecione...' />
+                      {incomes.map((income, index) => (
+                        <Option key={index} value={income.id} label={income.label} />
+                      ))}
+                    </Field>
+                    {errors.income && (
+                      <ErrorMessage content={errors.income} />
+                    )}
+                  </li>
+                  <li className='flex flex-col mt-2'>
+                    <Label target='gender' content='O sexo da pessoa é' />
+                    <Field
+                      as='select'
+                      id='gender'
+                      name='gender'
+                      className='border border-gray-200 font-light mt-1 p-2 rounded-md text-sm w-full customSelect'
+                    >
+                      <Option value={null} label='Selecione...' />
+                      {genders.map((gender, index) => (
+                        <Option key={index} value={gender.id} label={gender.label} />
+                      ))}
+                    </Field>
+                    {errors.gender && (
+                      <ErrorMessage content={errors.gender} />
+                    )}
                   </li>
                 </ul>
               </fieldset>
@@ -226,78 +344,20 @@ export default function Simulator() {
                   </li>
                   <li className='flex flex-col mt-2'>
                     <Label target='state' content='Estado' />
-                    <TextInput 
-                      placeholder='Estado'
+                    <Field
+                      as='select'
                       id='state'
                       name='state'
-                      onChange={handleChange}
-                      value={values.state} 
-                    />
-                    {errors.name && (
+                      className='border border-gray-200 font-light mt-1 p-2 rounded-md text-sm w-full customSelect'
+                    >
+                      <Option value={null} label='Selecione...' />
+                      {states.map((state, index) => (
+                        <Option key={index} value={state.id} label={state.label} />
+                      ))}
+                    </Field>
+                    {errors.state && (
                       <ErrorMessage content={errors.state} />
                     )}
-                  </li>
-                </ul>
-              </fieldset>
-            </div>
-            <div className="col-span-3">
-              <fieldset>
-                <ul>
-                  <li className='flex flex-col'>
-                    <Label target='cpf' content='O CPF do segurado é' />
-                    <CpfInput 
-                      placeholder='Ex: 999.999.999-99'
-                      id='cpf'
-                      name='cpf'
-                      onChange={handleChange}
-                      value={values.cpf}
-                    />
-                    {errors.cpf && (
-                      <ErrorMessage content={errors.cpf} />
-                    )}
-                  </li>
-                  <li className='flex flex-col mt-2'>
-                    <Label target='secured' content='O nome do segurado é' />
-                    <TextInput 
-                      placeholder='Nome do segurado'
-                      id='secured'
-                      name='secured'
-                      onChange={handleChange}
-                      value={values.secured}
-                    />
-                    {errors.secured && (
-                      <ErrorMessage content={errors.secured} />
-                    )}
-                  </li>
-                  <li className='flex flex-col mt-2'>
-                    <Label target='birth' content='Nascido(a) no dia' />
-                    <DateInput 
-                      placeholder='DD/MM/AAAA'
-                      id='birth'
-                      name='birth'
-                      onChange={handleChange}
-                      value={values.birth}
-                    />
-                    {errors.birth && (
-                      <ErrorMessage content={errors.birth} />
-                    )}
-                  </li>
-                  <li className='flex flex-col mt-2'>
-                    <Label target='income' content='Com renda familiar mensal de' />
-                    <Dropdown id='income'>
-                      <Option content='Selecione...' />
-                      <Option content='De R$ 0,00 à R$ 5.000,00' />
-                      <Option content='De R$ 5.000,01 à R$ 10.000,00' />
-                      <Option content='De R$ 10.000,01 à R$ 15.000,00' />
-                    </Dropdown>
-                  </li>
-                  <li className='flex flex-col mt-2'>
-                    <Label target='gender' content='O sexo da pessoal é' />
-                    <Dropdown id='gender'>
-                      <Option content='Selecione...' />
-                      <Option content='Masculino' />
-                      <Option content='Feminino' />
-                    </Dropdown>
                   </li>
                 </ul>
               </fieldset>
@@ -316,7 +376,7 @@ export default function Simulator() {
             </div>
           </Form>
         )}
-      />
+      </Formik>
     </main>
   )
 }
