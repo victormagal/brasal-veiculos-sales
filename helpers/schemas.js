@@ -1,6 +1,13 @@
 import * as Yup from 'yup';
 
-export default Yup.object().shape({
+export const priceSchema = Yup.object().shape({
+  entry: Yup.string().required(),
+  fee: Yup.string().required(),
+  period: Yup.string().required(),
+  total: Yup.string().required(),
+});
+
+export const simulatorSchema = Yup.object().shape({
   armored: Yup.string().nullable().required(),
   birth: Yup.string().required(),
   brand: Yup.string().nullable().required(),

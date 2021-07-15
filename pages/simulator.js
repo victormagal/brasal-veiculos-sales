@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import Label from '../components/Label';
 import Option from '../components/Option';
 import PhoneInput from '../components/PhoneInput';
-import Schema from '../helpers/schema';
+import { simulatorSchema } from '../helpers/schemas';
 import TextInput from '../components/TextInput';
 import { Field, Form, Formik } from "formik";
 
@@ -57,7 +57,7 @@ export default function Simulator() {
           usage: '',
         }}
         onSubmit={onSubmit}
-        validationSchema={Schema}
+        validationSchema={simulatorSchema}
       >
         {({ errors, handleChange, setFieldValue, values }) => (
           <Form className='lg:container mx-auto grid grid-cols-12 gap-4'>
