@@ -8,9 +8,33 @@ import PeriodInput from '../components/PeriodInput';
 import { Form, Formik } from "formik";
 import { priceSchema } from '../helpers/schemas';
 
+const onlyNumbers = (value) => {
+  return value.replace(/[^0-9]/g, '');
+}
+
 export default function Home() {
   const onSubmit = (values, actions) => {
-    console.log('SUBMIT', values)
+    const amortizations = [0];
+    const balance = [];
+    const fees = [0];
+
+    const amount = (onlyNumbers(values.total) - onlyNumbers(values.entry)) / 100;
+    const fee = onlyNumbers(values.fee) / 10000;
+    const period = parseInt(values.period);
+    
+    balance.push(amount);
+
+    const portion = amount * (Math.pow((1 + fee), period) * fee) / (Math.pow((1 + fee), period) - 1); 
+
+    for (let index = 0; index < period; index++) {
+      let nextFee = balance[index] * fee;
+      let nextAmortization = portion - nextFee;
+      let nextBalance = balance[index] - nextAmortization;
+
+      amortizations.push(nextAmortization);
+      balance.push(nextBalance);
+      fees.push(nextFee);
+    }
   }
 
   return (
