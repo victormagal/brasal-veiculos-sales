@@ -1,5 +1,5 @@
+import { useEffect, useState } from 'react';
 import Button from '../components/Button';
-import CurrencyInput from '../components/CurrencyInput';
 import CurrencyPriceInput from '../components/CurrencyPrice';
 import ErrorMessage from '../components/ErrorMessage';
 import FeeInput from '../components/FeeInput';
@@ -14,6 +14,16 @@ const onlyNumbers = (value) => {
 }
 
 export default function Home() {
+  const [finalAmortization, setFinalAmortization] = useState([]);
+  const [finalBalance, setFinalBalance] = useState([]);
+  const [finalFee, setFinalFee] = useState([]);
+
+  useEffect(() => {
+    console.log(finalAmortization);
+    console.log(finalBalance);
+    console.log(finalFee);
+  }, [finalAmortization]);
+
   const onSubmit = (values, actions) => {
     const amortizations = [0];
     const balance = [];
@@ -28,14 +38,18 @@ export default function Home() {
     const portion = amount * (Math.pow((1 + fee), period) * fee) / (Math.pow((1 + fee), period) - 1); 
 
     for (let index = 0; index < period; index++) {
-      let nextFee = balance[index] * fee;
-      let nextAmortization = portion - nextFee;
-      let nextBalance = balance[index] - nextAmortization;
+      let nextFee = (balance[index] * fee).toFixed(2);
+      let nextAmortization = (portion - nextFee).toFixed(2);
+      let nextBalance = (balance[index] - nextAmortization).toFixed(2);
 
       amortizations.push(nextAmortization);
       balance.push(nextBalance);
       fees.push(nextFee);
     }
+    
+    setFinalAmortization(amortizations);
+    setFinalBalance(balance);
+    setFinalFee(fees);
   }
 
   return (
@@ -134,6 +148,33 @@ export default function Home() {
           </Form>
         )}
       </Formik>
+      <table className="table-auto">
+        <thead>
+          <tr>
+            <th>Juros</th>
+            <th>Amortização</th>
+            <th>Parcela</th>
+            <th>Saldo devedor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Intro to CSS</td>
+            <td>Adam</td>
+            <td>858</td>
+          </tr>
+          <tr>
+            <td>A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
+            <td>Adam</td>
+            <td>112</td>
+          </tr>
+          <tr>
+            <td>Intro to JavaScript</td>
+            <td>Chris</td>
+            <td>1,280</td>
+          </tr>
+        </tbody>
+      </table>
     </main>
   )
 }
