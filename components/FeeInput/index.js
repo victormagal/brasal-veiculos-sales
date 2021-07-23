@@ -24,7 +24,7 @@ export default function FeeInput({ maskOptions, ...inputProps }) {
   return (
     <MaskedInput 
       mask={feeMask}
-      className='border border-gray-200 font-light mt-1 p-2 rounded-md text-sm' 
+      className='mt-1 text-xl' 
       {...inputProps} 
     />
   );
