@@ -10,6 +10,7 @@ import PhoneInput from '../../components/PhoneInput';
 import { simulatorSchema } from '../../helpers/schemas';
 import TextInput from '../../components/TextInput';
 import { Field, Form, Formik } from "formik";
+import { MinusCircleIcon } from '@heroicons/react/outline';
 
 import { armoredes, brands, genders, incomes, models, states, usages } from '../../helpers/selectContent';
 
@@ -34,30 +35,22 @@ export default function Simulator() {
   return (
     <main className="h-screen">
       <Header />
-      <div className="flex mb-12">
-        <div className="bg-blue p-5 text-white flex items-center w-1/4">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <h3 className="inline ml-10">Passo 01</h3>
+      <div className="flex">
+        <div className="bg-blue flex items-center p-5 text-white w-1/4">
+          <MinusCircleIcon width={24} height={24} className='text-white' />
+          <span className="font-sans ml-4 text-md text-white">Passo 01</span>
         </div>
-        <div className="bg-white p-5 bg-gray-50 flex items-center w-1/4">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <h3 className="inline ml-10">Passo 02</h3>
+        <div className="bg-gray-50 flex items-center text-white p-5 w-1/4">
+          <MinusCircleIcon width={24} height={24} className='text-gray-500' />
+          <span className="font-sans ml-4 text-md text-gray-500">Passo 02</span>
         </div>
-        <div className="bg-white p-5 bg-gray-50 flex items-center w-1/4">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <h3 className="inline ml-10">Passo 03</h3>
+        <div className="bg-gray-50 flex items-center p-5 w-1/4">
+          <MinusCircleIcon width={24} height={24} className='text-gray-500' />
+          <span className="font-sans ml-4 text-md text-gray-500">Passo 03</span>
         </div>
-        <div className="bg-white p-5 bg-gray-50 flex items-center w-1/4">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <h3 className="inline ml-10">Passo 04</h3>
+        <div className="bg-gray-50 flex items-center-5 p-5 w-1/4">
+          <MinusCircleIcon width={24} height={24} className='text-gray-500' />
+          <span className="font-sans ml-4 text-md text-gray-500">Passo 04</span>
         </div>
       </div>
       <Formik
@@ -86,7 +79,7 @@ export default function Simulator() {
         validationSchema={simulatorSchema}
       >
         {({ errors, handleChange, setFieldValue, values }) => (
-          <Form className='lg:container mx-auto grid grid-cols-12 gap-4'>
+          <Form className='lg:container mx-auto grid grid-cols-12 gap-4 my-12'>
             <ul className='col-span-6 col-start-4'>
               <li className="flex flex-col">
                 <Label target="name" content="Meu nome é" />
