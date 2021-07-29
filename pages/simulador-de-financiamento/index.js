@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
-import Button from '../components/Button';
-import CurrencyPriceInput from '../components/CurrencyPrice';
-import ErrorMessage from '../components/ErrorMessage';
-import FeeInput from '../components/FeeInput';
-import Header from "../components/Header";
-import Label from '../components/Label';
-import PeriodInput from '../components/PeriodInput';
+import Button from '../../components/Button';
+import CurrencyPriceInput from '../../components/CurrencyPrice';
+import ErrorMessage from '../../components/ErrorMessage';
+import FeeInput from '../../components/FeeInput';
+import Header from "../../components/Header";
+import Label from '../../components/Label';
+import PeriodInput from '../../components/PeriodInput';
 import { Form, Formik } from "formik";
-import { priceSchema } from '../helpers/schemas';
+import { priceSchema } from '../../helpers/schemas';
 
 const onlyNumbers = (value) => {
   return value.replace(/[^0-9]/g, '');

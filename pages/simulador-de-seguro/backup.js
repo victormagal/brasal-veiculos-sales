@@ -1,17 +1,17 @@
-import Button from '../components/Button';
-import CepInput from '../components/CepInput';
-import CpfInput from '../components/CpfInput';
-import DateInput from '../components/DateInput';
-import ErrorMessage from '../components/ErrorMessage';
-import Header from "../components/Header";
-import Label from '../components/Label';
-import Option from '../components/Option';
-import PhoneInput from '../components/PhoneInput';
-import { simulatorSchema } from '../helpers/schemas';
-import TextInput from '../components/TextInput';
+import Button from '../../components/Button';
+import CepInput from '../../components/CepInput';
+import CpfInput from '../../components/CpfInput';
+import DateInput from '../../components/DateInput';
+import ErrorMessage from '../../components/ErrorMessage';
+import Header from "../../components/Header";
+import Label from '../../components/Label';
+import Option from '../../components/Option';
+import PhoneInput from '../../components/PhoneInput';
+import { simulatorSchema } from '../../helpers/schemas';
+import TextInput from '../../components/TextInput';
 import { Field, Form, Formik } from "formik";
 
-import { armoredes, brands, genders, incomes, models, states, usages } from '../helpers/selectContent';
+import { armoredes, brands, genders, incomes, models, states, usages } from '../../helpers/selectContent';
 
 export default function Simulator() {
   const onSubmit = (values, actions) => {
