@@ -17,7 +17,7 @@ export default function Home() {
     const amortizations = [0];
     const balance = [];
     const fees = [0];
-
+    
     const amount = (onlyNumbers(values.total) - onlyNumbers(values.entry)) / 100;
     const fee = onlyNumbers(values.fee) / 10000;
     const period = parseInt(values.period);
