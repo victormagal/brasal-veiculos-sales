@@ -3,42 +3,50 @@ import MaskedInput from 'react-text-mask';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 
 const defaultMaskOptions = {
-  prefix: '',
+  prefix: 'R$ ',
   suffix: '',
-  includeThousandsSeparator: false,
-  allowDecimal: false,
-  integerLimit: 3,
+  includeThousandsSeparator: true,
+  thousandsSeparatorSymbol: '.',
+  allowDecimal: true,
+  decimalSymbol: ',',
+  decimalLimit: 2,
+  requireDecimal: true,
+  integerLimit: 9,
   allowNegative: false,
   allowLeadingZeroes: false
 }
 
-export default function PeriodInput({ maskOptions, ...inputProps }) {
-  const periodMask = createNumberMask({
+export default function CurrencyPriceInput({ maskOptions, ...inputProps }) {
+  const currencyMask = createNumberMask({
     ...defaultMaskOptions,
     ...maskOptions
   })
 
   return (
     <MaskedInput 
-      mask={periodMask}
+      mask={currencyMask}
       className='mt-1 text-xl' 
       {...inputProps} 
     />
   );
 }
 
-PeriodInput.defaultProps = {
+CurrencyPriceInput.defaultProps = {
   inputMode: 'numeric',
   maskOptions: {}
 }
 
-PeriodInput.propTypes = {
+CurrencyPriceInput.propTypes = {
   inputMode: PropTypes.string,
   maskOptions: PropTypes.shape({
     prefix: PropTypes.string,
     suffix: PropTypes.string,
     includeThousandsSeparator: PropTypes.boolean,
+    thousandsSeparatorSymbol: PropTypes.string,
     allowDecimal: PropTypes.boolean,
+    decimalSymbol: PropTypes.string,
+    decimalLimit: PropTypes.string,
+    requireDecimal: PropTypes.boolean,
     integerLimit: PropTypes.number,
     allowNegative: PropTypes.boolean,
     allowLeadingZeroes: PropTypes.boolean

@@ -10,7 +10,7 @@ module.exports = {
       gray: colors.gray
     },
     fontFamily: {
-      sans: ['Montserrat', 'sans-serif']
+      sans: ['Poppins', 'sans-serif']
     },
     extend: {},
   },
