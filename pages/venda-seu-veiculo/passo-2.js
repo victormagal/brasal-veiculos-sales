@@ -57,22 +57,22 @@ export default function Simulator() {
       <h2 className='text-xl'>Escolha sua marca</h2>
       </div>
       <div className="w-1/2 mx-auto grid grid-cols-6 gap-4 items-center justify-end">
-        <div className="col-start-2 col-end-4 mx-2 text-center p-10 border rounded">
+        <button className="col-start-2 col-end-4 mx-2 text-center p-10 border rounded focus:ring-2 focus:ring-blue">
         <Image
             src="/brand/ford.png"
             alt="Marca Ford"
             width={80}
             height={80}
           />
-        </div>
-        <div className="col-start-4 col-end-6 mx-2 text-center p-10 border rounded">
+        </button>
+        <button className="col-start-4 col-end-6 mx-2 text-center p-10 border rounded focus:ring-2 focus:ring-blue">
         <Image
             src="/brand/volkswagen.png"
             alt="Marca Volkswagen"
             width={80}
             height={80}
           />
-        </div>
+        </button>
         <ul className='col-span-6 col-start-1 mx-auto flex'>
               <li>
                 <Button type="reset" label="Limpar" />

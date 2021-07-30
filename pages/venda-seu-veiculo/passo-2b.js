@@ -57,40 +57,40 @@ export default function Simulator() {
         <h2 className='text-xl'>Escolha o Ano/modelo</h2>
       </div>
       <div className="container mx-auto grid grid-cols-6 gap-4 items-center justify-end">
-        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white">
+        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white focus:bg-blue focus:text-white">
           <h3>2020</h3>
         </button>
-        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white">
+        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white focus:bg-blue focus:text-white">
           <h3>2020</h3>
         </button>
-        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white">
+        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white focus:bg-blue focus:text-white">
           <h3>2020</h3>
         </button>
-        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white">
+        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white focus:bg-blue focus:text-white">
           <h3>2020</h3>
         </button>
-        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white">
+        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white focus:bg-blue focus:text-white">
           <h3>2020</h3>
         </button>
-        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white">
+        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white focus:bg-blue focus:text-white">
           <h3>2020</h3>
         </button>
-        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white">
+        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white focus:bg-blue focus:text-white">
           <h3>2020</h3>
         </button>
-        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white">
+        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white focus:bg-blue focus:text-white">
           <h3>2020</h3>
         </button>
-        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white">
+        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white focus:bg-blue focus:text-white">
           <h3>2020</h3>
         </button>
-        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white">
+        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white focus:bg-blue focus:text-white">
           <h3>2020</h3>
         </button>
-        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white">
+        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white focus:bg-blue focus:text-white">
           <h3>2020</h3>
         </button>
-        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white">
+        <button className="mx-2 text-center p-3 border rounded transition duration-500 ease-in-out bg-gray-50 hover:bg-blue hover:text-white focus:bg-blue focus:text-white">
           <h3>2020</h3>
         </button>
         <ul className='col-span-6 col-start-1 mx-auto flex'>

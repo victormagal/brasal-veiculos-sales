@@ -57,102 +57,103 @@ export default function Simulator() {
         <h2 className='text-xl'>Escolha seu modelo</h2>
       </div>
       <div className="container mx-auto grid grid-cols-6 gap-4 items-center justify-end">
-        <div className="mx-2 text-center p-3 border rounded">
+        <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
               src="/car/01.png"
               alt="Nome do Carro"
               width={165}
               height={110}
             />
-        </div>
-        <div className="mx-2 text-center p-3 border rounded">
+        </button>
+        <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
               src="/car/01.png"
               alt="Nome do Carro"
               width={165}
               height={110}
             />
-        </div>
-        <div className="mx-2 text-center p-3 border rounded">
+        </button>
+        <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
               src="/car/01.png"
               alt="Nome do Carro"
               width={165}
               height={110}
             />
-        </div>
-        <div className="mx-2 text-center p-3 border rounded">
+        </button>
+        <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
               src="/car/01.png"
               alt="Nome do Carro"
               width={165}
               height={110}
             />
-        </div>
-        <div className="mx-2 text-center p-3 border rounded">
+        </button>
+        <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
               src="/car/01.png"
               alt="Nome do Carro"
               width={165}
               height={110}
             />
-        </div>
-        <div className="mx-2 text-center p-3 border rounded">
+        </button>
+        <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
               src="/car/01.png"
               alt="Nome do Carro"
               width={165}
               height={110}
             />
-        </div>
-        <div className="mx-2 text-center p-3 border rounded">
+        </button>
+        <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
               src="/car/01.png"
               alt="Nome do Carro"
               width={165}
               height={110}
             />
-        </div>
-        <div className="mx-2 text-center p-3 border rounded">
+        </button>
+        <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
               src="/car/01.png"
               alt="Nome do Carro"
               width={165}
               height={110}
             />
-        </div>
-        <div className="mx-2 text-center p-3 border rounded">
+        </button>
+        <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
               src="/car/01.png"
               alt="Nome do Carro"
               width={165}
               height={110}
             />
-        </div>
-        <div className="mx-2 text-center p-3 border rounded">
+        </button>
+        <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
               src="/car/01.png"
               alt="Nome do Carro"
               width={165}
               height={110}
             />
-        </div>
-        <div className="mx-2 text-center p-3 border rounded">
+        </button>
+        <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
               src="/car/01.png"
               alt="Nome do Carro"
               width={165}
               height={110}
             />
-        </div>
-        <div className="mx-2 text-center p-3 border rounded">
+        </button>
+        <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
               src="/car/01.png"
               alt="Nome do Carro"
               width={165}
               height={110}
             />
-        </div>
+        </button>
+        
         <ul className='col-span-6 col-start-1 mx-auto flex'>
               <li>
                 <Button type="reset" label="Limpar" />
@@ -162,6 +163,7 @@ export default function Simulator() {
               </li>
             </ul>
       </div>
+      {/* fim container */}
     </main>
   )
 }

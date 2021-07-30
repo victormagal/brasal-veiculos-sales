@@ -58,12 +58,12 @@ export default function Simulator() {
       </div>
       <div className="container mx-auto grid grid-cols-6 gap-4 items-center justify-end">
         <textarea placeholder="Escreva aqui" className="border p-5 col-start-2 col-end-6 h-40"></textarea>
-        <button className="col-start-2 col-end-6 my-4 transition duration-500 ease-in-out bg-blue hover:shadow-lg p-5 rounded text-white">
+        <div className="col-start-2 col-end-6 my-4 bg-blue p-5 rounded text-white">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
           </svg>
-            <h3 className="inline ml-3">Enviar fotos do veículo</h3>
-        </button>
+            <input type="file" className="inline ml-3"></input>
+        </div>
         <div className="col-start-2  mx-auto items-center justify-end">
           <div className="mx-2 text-center p-3 border rounded">
             <Image
