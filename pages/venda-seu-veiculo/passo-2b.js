@@ -94,13 +94,13 @@ export default function Simulator() {
           <h3>2020</h3>
         </button>
         <ul className='col-span-6 col-start-1 mx-auto flex'>
-              <li>
-                <Button type="reset" label="Limpar" />
-              </li>
-              <li className='ml-4'>
-                <Button type="submit" label="Continuar" />
-              </li>
-            </ul>
+          <li>
+            <Button type="reset" label="Limpar" />
+          </li>
+          <li className='ml-4'>
+            <Button type="submit" label="Continuar" />
+          </li>
+        </ul>
       </div>
     </main>
   )

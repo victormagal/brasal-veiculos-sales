@@ -59,28 +59,28 @@ export default function Simulator() {
       <div className="w-1/2 mx-auto grid grid-cols-6 gap-4 items-center justify-end">
         <button className="col-start-2 col-end-4 mx-2 text-center p-10 border rounded focus:ring-2 focus:ring-blue">
         <Image
-            src="/brand/ford.png"
-            alt="Marca Ford"
-            width={80}
-            height={80}
-          />
+          src="/brand/ford.png"
+          alt="Marca Ford"
+          width={80}
+          height={80}
+        />
         </button>
         <button className="col-start-4 col-end-6 mx-2 text-center p-10 border rounded focus:ring-2 focus:ring-blue">
         <Image
-            src="/brand/volkswagen.png"
-            alt="Marca Volkswagen"
-            width={80}
-            height={80}
-          />
+          src="/brand/volkswagen.png"
+          alt="Marca Volkswagen"
+          width={80}
+          height={80}
+        />
         </button>
         <ul className='col-span-6 col-start-1 mx-auto flex'>
-              <li>
-                <Button type="reset" label="Limpar" />
-              </li>
-              <li className='ml-4'>
-                <Button type="submit" label="Continuar" />
-              </li>
-            </ul>
+          <li>
+            <Button type="reset" label="Limpar" />
+          </li>
+          <li className='ml-4'>
+            <Button type="submit" label="Continuar" />
+          </li>
+        </ul>
       </div>
     </main>
   )

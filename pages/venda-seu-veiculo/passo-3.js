@@ -12,7 +12,8 @@ import TextInput from '../../components/TextInput';
 import { Field, Form, Formik } from "formik";
 import { 
   CheckCircleIcon,
-  MinusCircleIcon
+  MinusCircleIcon,
+  UploadIcon
  } from '@heroicons/react/outline';
 
 import { armoredes, brands, genders, incomes, models, states, usages } from '../../helpers/selectContent';
@@ -59,29 +60,27 @@ export default function Simulator() {
       <div className="container mx-auto grid grid-cols-6 gap-4 items-center justify-end">
         <textarea placeholder="Escreva aqui" className="border p-5 col-start-2 col-end-6 h-40"></textarea>
         <div className="col-start-2 col-end-6 my-4 bg-blue p-5 rounded text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-          </svg>
-            <input type="file" className="inline ml-3"></input>
+          <UploadIcon width={24} height={24} className='text-white' />
+          <input type="file" className="inline ml-3" />
         </div>
-        <div className="col-start-2  mx-auto items-center justify-end">
+        {/* <div className="col-start-2  mx-auto items-center justify-end">
           <div className="mx-2 text-center p-3 border rounded">
             <Image
-                src="/car/01.png"
-                alt="Nome do Carro"
-                width={165}
-                height={110}
-              />
+              src="/car/01.png"
+              alt="Nome do Carro"
+              width={165}
+              height={110}
+            />
           </div>
-        </div>
+        </div> */}
         <ul className='col-span-6 col-start-1 mx-auto flex'>
-              <li>
-                <Button type="reset" label="Limpar" />
-              </li>
-              <li className='ml-4'>
-                <Button type="submit" label="Continuar" />
-              </li>
-            </ul>
+          <li>
+            <Button type="reset" label="Limpar" />
+          </li>
+          <li className='ml-4'>
+            <Button type="submit" label="Continuar" />
+          </li>
+        </ul>
       </div>
     </main>
   )

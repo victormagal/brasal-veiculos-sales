@@ -59,111 +59,109 @@ export default function Simulator() {
       <div className="container mx-auto grid grid-cols-6 gap-4 items-center justify-end">
         <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
-              src="/car/01.png"
-              alt="Nome do Carro"
-              width={165}
-              height={110}
-            />
+            src="/car/01.png"
+            alt="Nome do Carro"
+            width={165}
+            height={110}
+          />
         </button>
         <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
-              src="/car/01.png"
-              alt="Nome do Carro"
-              width={165}
-              height={110}
-            />
+            src="/car/01.png"
+            alt="Nome do Carro"
+            width={165}
+            height={110}
+          />
         </button>
         <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
-              src="/car/01.png"
-              alt="Nome do Carro"
-              width={165}
-              height={110}
-            />
+            src="/car/01.png"
+            alt="Nome do Carro"
+            width={165}
+            height={110}
+          />
         </button>
         <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
-              src="/car/01.png"
-              alt="Nome do Carro"
-              width={165}
-              height={110}
-            />
+            src="/car/01.png"
+            alt="Nome do Carro"
+            width={165}
+            height={110}
+          />
         </button>
         <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
-              src="/car/01.png"
-              alt="Nome do Carro"
-              width={165}
-              height={110}
-            />
+            src="/car/01.png"
+            alt="Nome do Carro"
+            width={165}
+            height={110}
+          />
         </button>
         <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
-              src="/car/01.png"
-              alt="Nome do Carro"
-              width={165}
-              height={110}
-            />
+            src="/car/01.png"
+            alt="Nome do Carro"
+            width={165}
+            height={110}
+          />
         </button>
         <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
-              src="/car/01.png"
-              alt="Nome do Carro"
-              width={165}
-              height={110}
-            />
+            src="/car/01.png"
+            alt="Nome do Carro"
+            width={165}
+            height={110}
+          />
         </button>
         <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
-              src="/car/01.png"
-              alt="Nome do Carro"
-              width={165}
-              height={110}
-            />
+            src="/car/01.png"
+            alt="Nome do Carro"
+            width={165}
+            height={110}
+          />
         </button>
         <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
-              src="/car/01.png"
-              alt="Nome do Carro"
-              width={165}
-              height={110}
-            />
+            src="/car/01.png"
+            alt="Nome do Carro"
+            width={165}
+            height={110}
+          />
         </button>
         <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
-              src="/car/01.png"
-              alt="Nome do Carro"
-              width={165}
-              height={110}
-            />
+            src="/car/01.png"
+            alt="Nome do Carro"
+            width={165}
+            height={110}
+          />
         </button>
         <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
-              src="/car/01.png"
-              alt="Nome do Carro"
-              width={165}
-              height={110}
-            />
+            src="/car/01.png"
+            alt="Nome do Carro"
+            width={165}
+            height={110}
+          />
         </button>
         <button className="mx-2 text-center p-3 border rounded focus:ring-2 focus:ring-blue">
           <Image
-              src="/car/01.png"
-              alt="Nome do Carro"
-              width={165}
-              height={110}
-            />
+            src="/car/01.png"
+            alt="Nome do Carro"
+            width={165}
+            height={110}
+          />
         </button>
-        
         <ul className='col-span-6 col-start-1 mx-auto flex'>
-              <li>
-                <Button type="reset" label="Limpar" />
-              </li>
-              <li className='ml-4'>
-                <Button type="submit" label="Continuar" />
-              </li>
-            </ul>
+          <li>
+            <Button type="reset" label="Limpar" />
+          </li>
+          <li className='ml-4'>
+            <Button type="submit" label="Continuar" />
+          </li>
+        </ul>
       </div>
-      {/* fim container */}
     </main>
   )
 }
